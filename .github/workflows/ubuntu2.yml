@@ -1,0 +1,17 @@
+name: Ubuntu2
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./install-frp.sh
+      - name: run frpc
+        env:
+          RUNNER_PASSWORD: ${{ secrets.RUNNER_PASSWORD }}
+          FRPS_DOMAIN: ${{ secrets.FRPS_DOMAIN }}
+          FRPC_TLS_KEY: ${{ secrets.FRPC_TLS_KEY }}
+          FRPC_TLS_CERTIFICATE: ${{ secrets.FRPC_TLS_CERTIFICATE }}
+          FRPC_TLS_CA_CERTIFICATE: ${{ secrets.FRPC_TLS_CA_CERTIFICATE }}
+          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+        run: ./run-frpc2.sh
