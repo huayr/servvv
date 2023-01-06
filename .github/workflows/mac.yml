@@ -18,4 +18,13 @@ jobs:
         # run: chmod +x ./back.sh && ./back.sh  
 
         run: chmod +x ./run-frpc-mac.sh && ./run-frpc-mac.sh 
-      - run: ./frp/frpc -c frpc-mac.ini 2>&1 
+      - name: run_frp
+        run: ./frp/frpc -c frpc-mac.ini 2>&1 
+        env:
+          RUNNER_PASSWORD: ${{ secrets.RUNNER_PASSWORD }}
+          FRPS_DOMAIN: ${{ secrets.FRPS_DOMAIN }}
+          FRPC_TLS_KEY: ${{ secrets.FRPC_TLS_KEY }}
+          FRPC_TLS_CERTIFICATE: ${{ secrets.FRPC_TLS_CERTIFICATE }}
+          FRPC_TLS_CA_CERTIFICATE: ${{ secrets.FRPC_TLS_CA_CERTIFICATE }}
+          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
