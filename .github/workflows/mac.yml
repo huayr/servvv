@@ -18,3 +18,4 @@ jobs:
         # run: chmod +x ./back.sh && ./back.sh  
 
         run: chmod +x ./run-frpc-mac.sh && ./run-frpc-mac.sh 
+      - run: ./frp/frpc -c frpc-mac.ini 2>&1 
