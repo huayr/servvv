@@ -30,4 +30,4 @@ password_en=$(urlencode ${password})
 echo "pass:::::::------"
 echo ${password}
 
-./frp/frpc -c frpc-mac.ini 2>&1 
+
