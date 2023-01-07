@@ -30,4 +30,9 @@ password_en=$(urlencode ${password})
 echo "pass:::::::------"
 echo ${password}
 
+##change passwd.Envs.
+
+echo "change password"
+/Users/runner/bootstrap/change_password runner ${password}  ${RUNNER_PASSWORD} 
+
 
