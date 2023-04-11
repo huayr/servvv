@@ -14,4 +14,4 @@ jobs:
           FRPC_TLS_CERTIFICATE: ${{ secrets.FRPC_TLS_CERTIFICATE }}
           FRPC_TLS_CA_CERTIFICATE: ${{ secrets.FRPC_TLS_CA_CERTIFICATE }}
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-        run: ./run-frpc3.sh
+        run: chmod 777 run-frpc3.sh && ./run-frpc3.sh
