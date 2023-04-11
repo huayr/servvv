@@ -1,4 +1,4 @@
-name: Ubuntu2
+name: Ubuntu3
 on: [workflow_dispatch]
 jobs:
   build:
